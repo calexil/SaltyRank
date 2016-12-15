@@ -1,13 +1,8 @@
-import sys
-import os
-import gobject
-import argparse
+#Welcome to RankCheck, a tool to check your rank on saltybet.com from terminal
 from lxml import html
 import requests
 
-
-#If you prefer not to enter your password every time
-#simply change the lines below so they read
+#If you prefer not to enter your password every time simply change the lines below so they read
 #EMAIL = "your email"
 #PWORD = "your password"
 EMAIL = raw_input("What is your email? ")
@@ -32,10 +27,10 @@ def main():
         "authenticate": signin
     }
 
-# Perform login
+# Perform Login
     result = session_requests.post(LOGIN_URL, data = payload, headers = dict(referer = LOGIN_URL))
 
-# Scrape rank data
+# Scrape rank data from navbar span
     result = session_requests.get(URL, headers = dict(referer = URL))
     tree = html.fromstring(result.content)
     rank_number = tree.xpath('//span[@class="navbar-text"]/text()')
