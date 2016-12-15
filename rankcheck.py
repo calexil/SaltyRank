@@ -1,12 +1,14 @@
 #Welcome to RankCheck, a tool to check your rank on saltybet.com from terminal
 from lxml import html
 import requests
+import getpass
+
 
 #If you prefer not to enter your password every time simply change the lines below so they read
 #EMAIL = "your email"
 #PWORD = "your password"
 EMAIL = raw_input("What is your email? ")
-PWORD = raw_input("Enter your password: ")
+PWORD = getpass.getpass("Enter your password: ")
 
 LOGIN_URL = "http://www.saltybet.com/authenticate?signin=1"
 URL = "http://www.saltybet.com"
