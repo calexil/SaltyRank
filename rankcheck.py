@@ -6,9 +6,12 @@ from lxml import html
 import requests
 
 
-
-EMAIL = "<email>"
-PWORD = "<password>"
+#If you prefer not to enter your password every time
+#simply change the lines below so they read
+#EMAIL = "your email"
+#PWORD = "your password"
+EMAIL = raw_input("What is your email? ")
+PWORD = raw_input("Enter your password: ")
 
 LOGIN_URL = "http://www.saltybet.com/authenticate?signin=1"
 URL = "http://www.saltybet.com"
@@ -37,7 +40,7 @@ def main():
     tree = html.fromstring(result.content)
     rank_number = tree.xpath('//span[@class="navbar-text"]/text()')
 
-print "%s" % rank_number
+    print "%s" % rank_number
 
 if __name__ == '__main__':
     main()
