@@ -1,4 +1,4 @@
-#Welcome to RankCheck, a tool to check your rank on saltybet.com from terminal
+#Welcome to SaltyRank, a tool to check your rank on saltybet.com from terminal
 from lxml import html
 import requests
 import getpass
