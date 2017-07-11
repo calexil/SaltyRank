@@ -35,7 +35,7 @@ def main():
 # Scrape rank data from navbar span
     result = session_requests.get(URL, headers = dict(referer = URL))
     tree = html.fromstring(result.content)
-    rank_number = tree.xpath('//span[@class="navbar-text"]/text()')
+    rank_number = tree.xpath('//span[@id="leaderboardRank"]/text()')
 
     print "%s" % rank_number
 
